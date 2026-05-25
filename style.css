@@ -1,0 +1,402 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body{
+    min-height: 100vh;
+    background: linear-gradient(135deg,#344b80c0,#182238,#1e293b);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 2px;
+}
+
+/* =========================
+   CALCULATOR BODY
+========================= */
+
+.calBody{
+    width: 100%;
+
+    /* responsive sizing */
+    max-width: 500px;
+
+    min-height: 100vh;
+
+    background: transparent;
+
+    backdrop-filter: blur(14px);
+
+    border: none;
+
+    border-radius: 25px;
+
+    padding: 0;
+
+    /* box-shadow:
+        0 10px 30px rgba(0,0,0,0.4),
+        inset 0 1px 1px rgba(255,255,255,0.08); */
+
+    display: flex;
+    flex-direction: column;
+}
+
+/* =========================
+   TITLE
+========================= */
+
+.calBody h2{
+    color: white;
+
+    text-align: center;
+
+    margin-bottom: 15px;
+
+    font-size: clamp(22px,5vw,32px);
+
+    letter-spacing: 2px;
+}
+
+/* =========================
+   AI BUTTON
+========================= */
+
+.aiPageBtn{
+    width: 100%;
+}
+
+.aiPageBtn button{
+    width: 100%;
+
+    min-height: 35px;
+
+    border: none;
+
+    border-radius: 16px;
+
+    font-size: clamp(15px,3vw,18px);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: white;
+
+    background: linear-gradient(135deg,#2563eb,#06b6d4);
+
+    transition: 0.2s ease;
+}
+
+.aiPageBtn button:hover{
+    transform: translateY(-2px);
+}
+
+/* =========================
+   SCREEN
+========================= */
+
+.screenDiv{
+    margin-top: 10px;
+    margin-bottom: 15px;
+}
+
+.firstScreen,
+.secondScreen{
+    width: 100%;
+
+    border: none;
+
+    outline: none;
+
+    border-radius: 16px;
+
+    padding: 14px;
+
+    text-align: right;
+
+    color: white;
+
+    background: rgba(255,255,255,0.07);
+
+    margin-bottom: 10px;
+
+    overflow-x: auto;
+}
+
+.firstScreen{
+    height: 75px;
+
+    font-size: clamp(24px,6vw,34px);
+
+    font-weight: bold;
+}
+
+.secondScreen{
+    height: 45px;
+
+    font-size: clamp(15px,3vw,20px);
+
+    color: #cbd5e1;
+}
+
+/* =========================
+   BUTTON AREA
+========================= */
+
+.buttonDiv{
+    flex: 1;
+
+    display: flex;
+
+    flex-direction: column;
+
+    /* justify-content: space-evenly; */
+
+    gap: 10px;
+}
+
+/* =========================
+   BUTTON ROWS
+========================= */
+
+.buttonList{
+    display: grid;
+
+    grid-template-columns: repeat(4,1fr);
+
+    gap: 12px;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+    border: none;
+
+    outline: none;
+
+    min-height: 35px;
+
+    border-radius: 14px;
+
+    font-size: clamp(16px,4vw,24px);
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    color: white;
+
+    background: rgba(255,255,255,0.08);
+
+    transition: 0.2s ease;
+
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.25),
+        inset 0 1px 1px rgba(255,255,255,0.08);
+}
+
+button:hover{
+    transform: translateY(-2px);
+
+    background: rgba(255,255,255,0.15);
+}
+
+button:active{
+    transform: scale(0.95);
+}
+
+/* =========================
+   SPECIAL BUTTONS
+========================= */
+
+#ac{
+    background: linear-gradient(135deg,#ef4444,#dc2626);
+}
+
+#del{
+    background: linear-gradient(135deg,#f59e0b,#d97706);
+}
+
+#equlTo{
+    background: linear-gradient(135deg,#06b6d4,#2563eb);
+}
+
+#angleMode{
+    background: linear-gradient(135deg,#ec4899,#be185d);
+}
+
+/* =========================
+   SCIENTIFIC BUTTONS
+========================= */
+#science{
+    margin-bottom: 10px;
+}
+
+#science button{
+    background: linear-gradient(135deg,#14b8a6,#0f766e);
+
+    min-height: 40px;
+
+    font-size: clamp(14px,3vw,18px);
+}
+
+/* =========================
+   OPERATORS
+========================= */
+
+.buttonList button:nth-child(4){
+    background: linear-gradient(135deg,#7c3aed,#9333ea);
+}
+
+/* =========================
+   smaller DEVICES
+========================= */
+
+@media (max-width: 390px),(min-width: 350px){
+
+    body{
+        padding: 3px;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .aiPageBtn button{
+        width: 100%;
+        min-height: 27px;
+        font-size: clamp(14px,3vw,16px);
+        margin: 0;
+    }
+
+    .calBody{
+        width: 100%;
+
+        max-width: 100%;
+
+        min-height: 45vh;
+
+        border-radius: 0;
+
+        padding: 0;
+
+        display: flex;
+        flex-direction: column;
+    }
+
+    .calBody h2{
+        font-size: clamp(20px,3vw,25px);
+    }
+
+    .screenDiv{
+        margin-bottom: 4px;
+    }
+
+    .firstScreen{
+        height: 53px;
+
+        font-size: clamp(20px,4vw,30px);
+    }
+
+    .secondScreen{
+        height: 35px;
+
+        font-size: clamp(13px,2vw,17px);
+    }
+
+    .buttonDiv{
+        flex: 1;
+
+        display: flex;
+        flex-direction: column;
+
+        /* justify-content: space-evenly; */
+    }
+
+    .buttonList{
+        gap: 12px;
+    }
+
+    button{
+        width: 100%;
+
+        min-height: 50px;
+
+        font-size: clamp(17px,4vw,22px);
+
+        border-radius: 14px;
+    }
+
+    #science{
+        margin-bottom: 0;
+    }
+    #science button{
+        min-height: 40px;
+
+        font-size: clamp(14px,3vw,18px);
+    }
+
+}
+
+/* =========================
+   LARGE DEVICES
+========================= */
+@media (min-width: 700px){
+
+    body{
+        padding: 20px;
+    }
+
+    .calBody{
+        min-height: auto;
+
+        border-radius: 25px;
+
+        padding: 20px;
+    }
+
+    button{
+        min-height: 65px;
+    }
+
+}
+
+
+/* =========================
+   EXTRA SMALL DEVICES
+========================= */
+
+@media (max-height: 700px){
+
+    button{
+        min-height: 40px;
+    }
+
+    #science button{
+        min-height: 27px;
+        font-size: clamp(12px,2vw,16px);
+    }
+
+    .screenDiv{
+        margin-bottom: 4px;
+    }
+
+    .firstScreen{
+        height: 40px;
+    }
+
+    .secondScreen{
+        height: 20px;
+
+        font-size: clamp(10px,2vw,15px);
+    }
+
+
+}

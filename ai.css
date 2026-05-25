@@ -1,0 +1,126 @@
+
+/* =========================
+   TITLE
+========================= */
+
+h1{
+    text-align: center;
+    color: white;
+    font-size: clamp(22px,4vw,30px);
+    margin-bottom: 10px;
+}
+
+p{
+    text-align: center;
+    color: #cbd5e1;
+    margin-bottom: 15px;
+    font-size: 14px;
+}
+
+/* =========================
+   CAMERA
+========================= */
+
+video{
+    width: 100%;
+    border-radius: 16px;
+    margin-top: 10px;
+    background: black;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+button{
+    width: 100%;
+    padding: 14px;
+    margin-top: 10px;
+    border: none;
+    border-radius: 14px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    color: white;
+    background: rgba(255,255,255,0.1);
+    transition: 0.2s ease;
+    box-shadow:
+        0 4px 10px rgba(0,0,0,0.3),
+        inset 0 1px 1px rgba(255,255,255,0.08);
+}
+
+button:hover{
+    transform: translateY(-2px);
+    background: rgba(255,255,255,0.18);
+}
+
+button:active{
+    transform: scale(0.97);
+}
+
+/* Capture Button */
+#captureBtn{
+    background: linear-gradient(135deg,#f59e0b,#d97706);
+}
+
+/* Solve Button */
+#solveBtn{
+    background: linear-gradient(135deg,#2563eb,#06b6d4);
+}
+
+/* =========================
+   PREVIEW IMAGE
+========================= */
+
+#preview{
+    margin-top: 15px;
+}
+
+#preview img{
+    width: 100%;
+    border-radius: 16px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.4);
+}
+
+/* =========================
+   RESULT BOX
+========================= */
+
+#resultBox{
+    margin-top: 18px;
+    padding: 15px;
+    border-radius: 16px;
+    background: rgba(255,255,255,0.06);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+#resultBox h2{
+    color: white;
+    margin-bottom: 10px;
+    font-size: 18px;
+    text-align: center;
+}
+
+#solution{
+    color: #cbd5e1;
+    font-size: 15px;
+    line-height: 1.6;
+    white-space: pre-wrap;
+}
+
+/* =========================
+   MOBILE FIX
+========================= */
+
+@media(max-width: 480px){
+    .container{
+        padding: 15px;
+        border-radius: 18px;
+    }
+
+    button{
+        font-size: 15px;
+        padding: 12px;
+    }
+}
